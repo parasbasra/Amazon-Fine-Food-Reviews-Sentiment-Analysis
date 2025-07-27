@@ -50,7 +50,7 @@ This ensured the model receives clean, minimal, and meaningful text data.
 
 ### TF-IDF Vectorization
 - Converted text to numeric form using **TF-IDF vectorizer**
-- Used top 5000 features for model input
+- Used top 10000 features for model input
 
 ### Models Tried
 - **Logistic Regression**
