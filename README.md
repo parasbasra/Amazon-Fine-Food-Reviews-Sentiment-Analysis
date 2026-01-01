@@ -1,81 +1,71 @@
+# 📦 Amazon Fine Food Reviews — Customer Sentiment Analysis
 
-# 📦 Amazon Fine Food Reviews — Sentiment Analysis Project
-
-This is an end-to-end **Sentiment Analysis project** built on the Amazon Fine Food Reviews dataset. It combines **data cleaning**, **exploratory analysis**, **machine learning modeling**, and **Power BI dashboarding** to deliver clear insights into customer reviews.
+Analysis of large-scale Amazon Fine Food customer reviews to understand sentiment patterns, review behavior, and customer satisfaction trends.  
+This project focuses on **data preparation, exploratory analysis, and insight generation**, with sentiment analysis used as a supporting technique and results visualized in Power BI.
 
 ---
 
-## 🧠 Objective
+## 🧠 Project Objective
 
-To identify whether a review is **positive** or **negative** based solely on its text.  
-This project simulates a real-world NLP pipeline using Python and Power BI.
+To analyze customer review text and ratings in order to:
+- Understand overall customer sentiment
+- Identify patterns in positive and negative feedback
+- Support business and product insights using large volumes of unstructured data
+
+The goal of the project is **analysis and interpretation**, not model optimization.
 
 ---
 
 ## 🔍 Dataset Overview
 
-- **Source**: [Amazon Fine Food Reviews dataset](https://www.kaggle.com/datasets/snap/amazon-fine-food-reviews)
-- **Total records after cleaning**: ~390,000
-- **Key columns used**:
-  - `Score`: Original numerical rating (used to define sentiment)
-  - `Text`: Actual review content
+- **Source**: Amazon Fine Food Reviews dataset (Kaggle)
+- **Records analyzed**: ~390,000 cleaned reviews
+- **Key fields**:
+  - `Score`: Star rating provided by customers
+  - `Text`: Review content
+  - Derived sentiment labels used for analysis
 
 ---
 
-## 🧹 Step 1–5: Data Preparation
+## 🧹 Data Preparation & Exploration
 
-- Removed irrelevant or duplicate columns
-- Dropped null values
-- Created a new **binary Sentiment column**:
-  - Positive (`Score` ≥ 4) → 1
-  - Negative (`Score` ≤ 2) → 0
-  - Neutral scores (3) were excluded
-- Resulting dataset was filtered to around **390,000 clean reviews**
-
----
-
-## 🧼 Step 6: Text Preprocessing
-
-Applied NLP techniques:
-- Lowercasing
-- Punctuation and number removal
-- Stopword removal (using NLTK)
-- Lemmatization
-
-This ensured the model receives clean, minimal, and meaningful text data.
+- Removed irrelevant and duplicate columns
+- Handled missing values
+- Defined sentiment categories based on review scores:
+  - Positive (Score ≥ 4)
+  - Negative (Score ≤ 2)
+  - Neutral reviews excluded to reduce ambiguity
+- Performed initial exploration of rating distribution and review characteristics
 
 ---
 
-## 📊 Step 7: Model Training & Evaluation
+## 🧼 Text Processing (Supporting Analysis)
 
-### TF-IDF Vectorization
-- Converted text to numeric form using **TF-IDF vectorizer**
-- Used top 10000 features for model input
+- Basic text cleaning and normalization
+- Removal of noise such as punctuation and stopwords
+- Lemmatization to standardize review text
 
-### Models Tried
-- **Logistic Regression**
-- **Multinomial Naive Bayes**
-- **Random Forest**
-- **Gradient Boosting**
-- **SVC**
-
-### Observations:
-- All models achieved ~85% accuracy
-- Reason: Class imbalance (85% of reviews are positive)
-- Upsampling or full dataset training could improve performance
+These steps enabled consistent analysis of customer feedback at scale.
 
 ---
 
-## 📈 Step 8: Power BI Dashboard
+## 📊 Exploratory & Sentiment Analysis
 
-- Cleaned CSV exported to Power BI
-- Dashboard includes:
-  - Review volume trends
-  - Sentiment distribution
-  - Top reviewers & products
-  - Word cloud of common review terms
+- Examined distribution of positive vs negative reviews
+- Analyzed review volume and sentiment trends
+- Used standard, off-the-shelf sentiment techniques to support observed patterns
+- Focused on understanding **what customers are saying**, not on maximizing predictive performance
 
-🔗 *Power BI file included in this repo*
+---
+
+## 📈 Power BI Dashboard
+
+- Exported prepared data into Power BI for visualization
+- Dashboard highlights:
+  - Review volume and sentiment distribution
+  - Trends over time
+  - Frequently occurring review terms
+- Designed for business users to explore customer feedback interactively
 
 ---
 
@@ -83,24 +73,23 @@ This ensured the model receives clean, minimal, and meaningful text data.
 
 | File | Description |
 |------|-------------|
-| `Amazon Fine Food Reviews Sentiment Analysis.ipynb` | Full Python notebook for cleaning, modeling |
-| `Cleaned_Amazon_Reviews.csv` | Final cleaned data used in Power BI |
-| `Amazon_Food_Review_Dashboard.pbix` | Power BI dashboard file |
-| `BI_Screenshots.pdf` | Power BI dashboard file |
-| `README.md` | Project summary and documentation |
+| `Amazon Fine Food Reviews Sentiment Analysis.ipynb` | Python notebook for data preparation and analysis |
+| `Cleaned_Amazon_Reviews.csv` | Processed dataset used for BI |
+| `Amazon_Food_Review_Dashboard.pbix` | Power BI dashboard |
+| `BI_Screenshots.pdf` | Dashboard screenshots |
+| `README.md` | Project documentation |
 
 ---
 
-## 📌 Summary
+## 💡 Business Value
 
-This project showcases:
-- Text classification pipeline for sentiment analysis
-- Preprocessing steps using NLP
-- Use of traditional ML models
-- Business insights visualized in Power BI
-
-It simulates a real-world case where a company wants to monitor and analyze **customer satisfaction** based on review text.
+This analysis demonstrates how large volumes of unstructured customer feedback can be transformed into:
+- Actionable insights on customer satisfaction
+- High-level sentiment trends
+- Supporting evidence for product, quality, and CX discussions
 
 ---
 
-> 📬 For any queries or feedback, feel free to reach out!
+## 👤 Author
+
+Paras Basra
